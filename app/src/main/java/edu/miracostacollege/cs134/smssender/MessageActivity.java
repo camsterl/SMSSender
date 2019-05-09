@@ -94,6 +94,12 @@ public class MessageActivity extends AppCompatActivity {
     public void deleteContact(View view) {
         // TODO: Delete the selected contact from the database and remove the contact from the contactsAdapter.
 
+        Contact c = (Contact) view.getTag();
+
+        db.deleteContact(c.getId());
+        contactsAdapter.remove(c);
+        contactsAdapter.notifyDataSetChanged();
+
     }
 
     public void sendTextMessage(View view) {

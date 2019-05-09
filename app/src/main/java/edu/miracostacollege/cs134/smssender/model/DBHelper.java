@@ -110,7 +110,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return contact;
     }
 
-    public void deleteContact(int id)
+    public void deleteContact(long id)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(DATABASE_TABLE, KEY_FIELD_ID + " = ?", new String[] {String.valueOf(id)});
